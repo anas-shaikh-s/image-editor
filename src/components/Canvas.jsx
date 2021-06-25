@@ -44,22 +44,30 @@ const Canvas = ({ imgSrc }) => {
     if (!canvas) {
       return;
     }
+
     //setting bg img for canvas
     fabric.Image.fromURL(imgSrc, function (img, isError) {
       canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
         scaleX: canvas.width / img.width,
         scaleY: canvas.height / img.height,
       });
-      // setRotateThisImg(img);
     });
-
-    // canvas.hoverCursor = 'move';
-    // canvas.hoverCursor = 'pointer';
 
     //if canvas will be selectable or not
     canvas.selection = selection;
+
     //if zoom is enable
     canvas.off("mouse:down").off("mouse:move").off("mouse:up");
+
+    //for delete key
+    window.addEventListener("keydown", ({ key }) => {
+      console.log(key);
+      if (key === "Delete") {
+        handleDelete();
+      }
+    });
+
+    //if the option is zoom
     if (option === "zoom") {
       // console.log("option is zoom");
       canvas.isDrawingMode = false;
@@ -79,6 +87,8 @@ const Canvas = ({ imgSrc }) => {
       });
       return;
     }
+
+    //initially stop drawing mode if option is not pen
     canvas.isDrawingMode = false;
     // addImg();
 

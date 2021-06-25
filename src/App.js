@@ -3,7 +3,7 @@ import "./App.css";
 import Canvas from "./components/Canvas";
 // import Test from "./components/Test";
 // import test from "./bg6.jpg";
-import imgSrc from "./bg6.jpg";
+import imgSrc from "./bg5.jpg";
 // import { useState } from "react";
 
 function App() {
