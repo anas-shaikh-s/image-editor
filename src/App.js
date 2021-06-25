@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+// import ImageEditor from "./components/ImageEditor";
+import Canvas from "./components/Canvas";
+// import Test from "./components/Test";
+// import test from "./bg6.jpg";
+import imgSrc from "./bg6.jpg";
+// import { useState } from "react";
 
 function App() {
+  // const [image, setImage] = useState(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <ImageEditor imgsrc={test} /> */}
+      {/* <input
+        type="file"
+        accept="image/*"
+        onChange={(e) => {
+          console.log(e.target.files[0]);
+
+          const imgObj = new Image();
+          imgObj.src = e.target.src;
+          setImage(imgObj);
+        }}
+      /> */}
+      <Canvas imgSrc={imgSrc} />
+      {/* <Test /> */}
     </div>
   );
 }
